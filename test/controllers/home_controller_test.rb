@@ -9,7 +9,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get home_index_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "節約メーター"
   end
 
 end
