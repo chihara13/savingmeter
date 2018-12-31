@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Itemname:</strong>
+  <%= @saving_item.itemname %>
+</p>
+
+<p>
+  <strong>Categoryid:</strong>
+  <%= @saving_item.categoryid %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @saving_item.date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @saving_item.amount %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @saving_item.memo %>
+</p>
+
+<%= link_to 'Edit', edit_saving_item_path(@saving_item) %> |
+<%= link_to 'Back', saving_items_path %>
