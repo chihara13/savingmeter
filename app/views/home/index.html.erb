@@ -1,10 +1,15 @@
-<div class="center jumbotron">    
+<% # トップページ %>
+
+<div class="container">
   <h1>節約メーターへようこそ！</h1>
+  <div class="row">
+    <div class="col center">    
+      <%= link_to image_tag("saving.png", alt: "Saving.logo", width:'30%') %>
+    </div>
+  </div>
   <h2>
     あなたが1日に我慢したものを記録して合計でどれだけ節約できたのかが分かります。
   </h2>
 
-  <%= link_to "はじめる", '#', class: "btn btn-lg btn-primary" %>
+  <%= link_to "はじめる", new_user_registration_path, class: "btn btn-lg btn-primary" %>
 </div>
-
-<%= link_to image_tag("saving.png", alt: "Saving.logo") %>

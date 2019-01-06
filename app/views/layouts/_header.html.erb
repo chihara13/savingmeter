@@ -1,12 +1,14 @@
 <header class="navbar navbar-fixed-to navbar-inverse">
-      <div class="container">
-        <%= link_to "節約メーター", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "ホーム", '#' %></li>
-            <li><%= link_to "ホーム", '#' %></li>
-            <li><%= link_to "ホーム", '#' %></li>
-          </ul>
-        </nav>
+    <nav>
+      <div class="nav-wrapper">
+        <%= link_to "節約メーター", root_path, class: "brand-logo" %>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to "ホーム", root_path %></li>
+          <li><%= link_to "ユーザー登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+          <li><%= link_to "ログアウト", '#' %></li>
+          <li><%= link_to "お問い合わせ", '#' %></li>
+        </ul>
       </div>
-    </header>
+    </nav>
+</header>
