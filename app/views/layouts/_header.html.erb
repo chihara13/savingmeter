@@ -6,8 +6,8 @@
           <li><%= link_to "ホーム", root_path %></li>
           <li><%= link_to "ユーザー登録", new_user_registration_path %></li>
           <li><%= link_to "ログイン", new_user_session_path %></li>
-          <li><%= link_to "ログアウト", '#' %></li>
-          <li><%= link_to "お問い合わせ", '#' %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></li>
+          <li><%= link_to "お問い合わせ", home_contact_path %></li>
         </ul>
       </div>
     </nav>
