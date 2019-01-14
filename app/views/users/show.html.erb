@@ -1,4 +1,7 @@
 <% provide(:title, @user.username) %>
 <h1>
-  <%= @user.username %>
+  こんにちは、<%= @user.username %>さん！
 </h1>
+
+<p><%= @user.username %>さん専用のページです。</p>
+<%= link_to 'プロフィール編集', edit_user_registration_path %>

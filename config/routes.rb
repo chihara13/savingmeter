@@ -9,10 +9,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  resources :users
+  resources :users, :only => [:index, :show]
   resources :saving_items
   resources :categories
-  # get 'home/index' いらない？
   # devise_for :users
   resources :notes
 
