@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_150850) do
+ActiveRecord::Schema.define(version: 2019_01_18_224322) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "microposts", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
