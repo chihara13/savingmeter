@@ -12,3 +12,15 @@ User.create!(username: "Savingman",
                password:              password,
                password_confirmation: password)
 end
+
+# Saving_item.create!(itemname: "タバコ",
+#                     categoryid: "1",
+#                     date: "2019/1/1",
+#                     amount: "500",
+#                     memo: "今日も1箱我慢した")
+
+# users = User.order(:cerated_at).take(6)
+# 10.times do
+#   memo = Faker::Lorem.sentence(5)
+#   users.each { |user| user.saving_items.create!(memo: memo) }
+# end
