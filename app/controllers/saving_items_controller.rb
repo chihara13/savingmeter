@@ -1,6 +1,6 @@
 class SavingItemsController < ApplicationController
   before_action :set_saving_item, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:create, :destroy]
+  # before_action :logged_in_user, only: [:create, :destroy]
 
   # GET /saving_items
   # GET /saving_items.json
@@ -25,8 +25,9 @@ class SavingItemsController < ApplicationController
   # POST /saving_items
   # POST /saving_items.json
   def create
+    # debugger
     # @saving_item = SavingItem.new(saving_item_params)
-    @saving_item = current_user.saving_items.build(saving_items_params)
+    @saving_item = current_user.saving_items.build(params)
 
     respond_to do |format|
       if @saving_item.save
