@@ -15,10 +15,11 @@ class SavingItemsTest < ApplicationSystemTestCase
     click_on "New Saving Item"
 
     fill_in "Amount", with: @saving_item.amount
-    fill_in "Categoryid", with: @saving_item.categoryid
+    fill_in "Category", with: @saving_item.category_id
+    fill_in "Content", with: @saving_item.content
     fill_in "Date", with: @saving_item.date
-    fill_in "Itemname", with: @saving_item.itemname
-    fill_in "Memo", with: @saving_item.memo
+    fill_in "Item name", with: @saving_item.item_name
+    fill_in "User", with: @saving_item.user_id
     click_on "Create Saving item"
 
     assert_text "Saving item was successfully created"
@@ -30,10 +31,11 @@ class SavingItemsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Amount", with: @saving_item.amount
-    fill_in "Categoryid", with: @saving_item.categoryid
+    fill_in "Category", with: @saving_item.category_id
+    fill_in "Content", with: @saving_item.content
     fill_in "Date", with: @saving_item.date
-    fill_in "Itemname", with: @saving_item.itemname
-    fill_in "Memo", with: @saving_item.memo
+    fill_in "Item name", with: @saving_item.item_name
+    fill_in "User", with: @saving_item.user_id
     click_on "Update Saving item"
 
     assert_text "Saving item was successfully updated"

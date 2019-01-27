@@ -5,11 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Itemname</th>
-      <th>Categoryid</th>
+      <th>Item name</th>
+      <th>Category</th>
+      <th>User</th>
       <th>Date</th>
       <th>Amount</th>
-      <th>Memo</th>
+      <th>Content</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +18,12 @@
   <tbody>
     <% @saving_items.each do |saving_item| %>
       <tr>
-        <td><%= saving_item.itemname %></td>
-        <td><%= saving_item.categoryid %></td>
+        <td><%= saving_item.item_name %></td>
+        <td><%= saving_item.category_id %></td>
+        <td><%= saving_item.user %></td>
         <td><%= saving_item.date %></td>
         <td><%= saving_item.amount %></td>
-        <td><%= saving_item.memo %></td>
+        <td><%= saving_item.content %></td>
         <td><%= link_to 'Show', saving_item %></td>
         <td><%= link_to 'Edit', edit_saving_item_path(saving_item) %></td>
         <td><%= link_to 'Destroy', saving_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

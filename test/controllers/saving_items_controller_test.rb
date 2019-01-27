@@ -17,7 +17,7 @@ class SavingItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create saving_item" do
     assert_difference('SavingItem.count') do
-      post saving_items_url, params: { saving_item: { amount: @saving_item.amount, categoryid: @saving_item.categoryid, date: @saving_item.date, itemname: @saving_item.itemname, memo: @saving_item.memo } }
+      post saving_items_url, params: { saving_item: { amount: @saving_item.amount, category_id: @saving_item.category_id, content: @saving_item.content, date: @saving_item.date, item_name: @saving_item.item_name, user_id: @saving_item.user_id } }
     end
 
     assert_redirected_to saving_item_url(SavingItem.last)
@@ -34,7 +34,7 @@ class SavingItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update saving_item" do
-    patch saving_item_url(@saving_item), params: { saving_item: { amount: @saving_item.amount, categoryid: @saving_item.categoryid, date: @saving_item.date, itemname: @saving_item.itemname, memo: @saving_item.memo } }
+    patch saving_item_url(@saving_item), params: { saving_item: { amount: @saving_item.amount, category_id: @saving_item.category_id, content: @saving_item.content, date: @saving_item.date, item_name: @saving_item.item_name, user_id: @saving_item.user_id } }
     assert_redirected_to saving_item_url(@saving_item)
   end
 

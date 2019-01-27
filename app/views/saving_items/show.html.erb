@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Itemname:</strong>
-  <%= @saving_item.itemname %>
+  <strong>Item name:</strong>
+  <%= @saving_item.item_name %>
 </p>
 
 <p>
-  <strong>Categoryid:</strong>
-  <%= @saving_item.categoryid %>
+  <strong>Category:</strong>
+  <%= @saving_item.category_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @saving_item.user %>
 </p>
 
 <p>
@@ -21,8 +26,8 @@
 </p>
 
 <p>
-  <strong>Memo:</strong>
-  <%= @saving_item.memo %>
+  <strong>Content:</strong>
+  <%= @saving_item.content %>
 </p>
 
 <%= link_to 'Edit', edit_saving_item_path(@saving_item) %> |

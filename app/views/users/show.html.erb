@@ -7,7 +7,7 @@
 
 <div class="col-md-8">
 <% if @user.saving_items.any? %>
-  <h3>saving_items (<%= @user.saving_items.count %>)</h3>
+  <h3>saving_items</h3>
   <ol class="saving_items">
     <%= render @saving_items %>
   </ol>

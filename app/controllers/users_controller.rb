@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :logged_in_user, only: [:index, :show]
+  # before_action :sign_in_required, only: [:show]
   
   PER = 8
 

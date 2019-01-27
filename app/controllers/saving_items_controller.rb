@@ -1,5 +1,6 @@
 class SavingItemsController < ApplicationController
   before_action :set_saving_item, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   # GET /saving_items
   # GET /saving_items.json
@@ -24,13 +25,16 @@ class SavingItemsController < ApplicationController
   # POST /saving_items
   # POST /saving_items.json
   def create
-    @saving_item = SavingItem.new(saving_item_params)
+    # @saving_item = SavingItem.new(saving_item_params)
+    @saving_item = current_user.saving_items.build(saving_items_params)
 
     respond_to do |format|
       if @saving_item.save
-        format.html { redirect_to @saving_item, notice: 'Saving item was successfully created.' }
+        format.html { redirect_to @saving_item, notice: '投稿が完了しました。' }
         format.json { render :show, status: :created, location: @saving_item }
+        redirect_to root_url
       else
+        render 'home/index'
         format.html { render :new }
         format.json { render json: @saving_item.errors, status: :unprocessable_entity }
       end
@@ -69,6 +73,6 @@ class SavingItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def saving_item_params
-      params.require(:saving_item).permit(:itemname, :categoryid, :date, :amount, :memo)
+      params.require(:saving_item).permit(:item_name, :category_id, :user_id, :date, :amount, :content)
     end
 end

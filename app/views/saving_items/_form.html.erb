@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :itemname %>
-    <%= form.text_field :itemname %>
+    <%= form.label :item_name %>
+    <%= form.text_field :item_name %>
   </div>
 
   <div class="field">
-    <%= form.label :categoryid %>
-    <%= form.number_field :categoryid %>
+    <%= form.label :category_id %>
+    <%= form.number_field :category_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
   </div>
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.text_field :date %>
+    <%= form.date_select :date %>
   </div>
 
   <div class="field">
@@ -32,8 +37,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_area :memo %>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
   </div>
 
   <div class="actions">
