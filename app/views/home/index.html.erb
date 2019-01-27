@@ -38,3 +38,13 @@
   </div>
 <% end %>
 
+<% if logged_in? %>
+  <script>
+    $('body').removeClass('top_page');
+  </script>
+<% else %>
+  <script>
+    $('body').addClass('top_page');
+  </script>
+<% end %>
+
