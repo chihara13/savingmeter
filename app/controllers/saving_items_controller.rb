@@ -1,10 +1,10 @@
 class SavingItemsController < ApplicationController
   before_action :set_saving_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   # GET /saving_items
   # GET /saving_items.json
   def index
-    @saving_items = current_user.SavingItem.all
+    @saving_items = SavingItem.all
   end
 
   # GET /saving_items/1
@@ -14,7 +14,7 @@ class SavingItemsController < ApplicationController
 
   # GET /saving_items/new
   def new
-    @saving_item = current_user.SavingItem.new
+    @saving_item = SavingItem.new
   end
 
   # GET /saving_items/1/edit
@@ -25,16 +25,14 @@ class SavingItemsController < ApplicationController
   # POST /saving_items.json
   def create
     # debugger
-    @saving_item = current_user.SavingItem.new(saving_item_params)
+    @saving_item = SavingItem.new(saving_item_params)
     # @saving_item = current_user.saving_items.build(params)
 
     respond_to do |format|
       if @saving_item.save
         format.html { redirect_to @saving_item, notice: '投稿が完了しました。' }
         format.json { render :show, status: :created, location: @saving_item }
-        # redirect_to root_url
       else
-        # render 'home/index'
         format.html { render :new }
         format.json { render json: @saving_item.errors, status: :unprocessable_entity }
       end

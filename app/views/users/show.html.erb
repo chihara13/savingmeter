@@ -3,14 +3,23 @@
   こんにちは、<%= @user.username %>さん！
 </h1>
 
-<p><%= @user.username %>さん専用のページです。</p>
+<p><%= @user.username %>さんのマイページです。</p>
 
 <div class="col-md-8">
-<% if @user.saving_items.any? %>
-  <h3>saving_items</h3>
+<% if @saving_items.any? %>
+  <h3>最近の投稿</h3>
   <ol class="saving_items">
-    <%= render @saving_items %>
+  <% @saving_items.each do |item| %>
+    <li id="saving_item-<%= item.id %>">
+    <span class="user"><%= link_to "#{item[:item_name]}", saving_item_path(item[:id]) %></span>
+    <span class="content"><%= item.content %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(item.created_at) %> ago.
+    </span>
+    </li>
+  <% end %>
   </ol>
+  <%= paginate @saving_items %>
 <% end %>
 </div>
 

@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @saving_item = current_user.saving_items.find(params[:id])
   end
 
   # GET /categories/new

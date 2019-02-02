@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @saving_items = @user.saving_items.page(params[:page]).per(PER)
   end
   
 end
