@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_132934) do
+ActiveRecord::Schema.define(version: 2019_02_07_174542) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_01_26_132934) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.index ["user_id"], name: "index_saving_items_on_user_id"
   end
 

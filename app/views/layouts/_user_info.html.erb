@@ -1,3 +1,5 @@
 <h1><%= current_user.username %></h1>
-<span><%= link_to "view my profile", current_user %></span>
-<span><%= pluralize(current_user.saving_items.count, "saving_items") %></span>
+<span><%= pluralize(current_user.saving_items.count, "個の投稿があります。") %></span>
+</br>
+<span class="new badge"><%= link_to "マイページへ戻る", current_user %></span>
+

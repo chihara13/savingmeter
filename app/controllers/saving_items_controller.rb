@@ -1,6 +1,6 @@
 class SavingItemsController < ApplicationController
   before_action :set_saving_item, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
+
   # GET /saving_items
   # GET /saving_items.json
   def index
@@ -25,8 +25,8 @@ class SavingItemsController < ApplicationController
   # POST /saving_items.json
   def create
     # debugger
-    @saving_item = SavingItem.new(saving_item_params)
-    # @saving_item = current_user.saving_items.build(params)
+    # @saving_item = SavingItem.new(saving_item_params)
+    @saving_item = current_user.saving_items.build(saving_item_params)
 
     respond_to do |format|
       if @saving_item.save
