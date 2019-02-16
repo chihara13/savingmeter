@@ -17,10 +17,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :カテゴリ %>
-    <%= form.select :category, [["趣味","趣味"],["日用品","日用品"],["交通費","交通費"],["嗜好品","嗜好品"],["食費","食費"],["飲料","飲料"],["衣服","衣服"],["生活費","生活費"],["通信費","通信費"],["その他","その他"]] %>
+  <%= form.label :カテゴリ %>
+  <%= form.collection_select :category_id, @category.group(:category_name).order(id: :asc), :id, :category_name, {prompt: ""} %>
   </div>
-
+  
   <div class="field">
     <%= form.label :日付 %>
     <%= form.text_field :date, class: 'date-picker' %>

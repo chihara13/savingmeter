@@ -13,14 +13,20 @@ User.create!(username: "Savingman",
                password_confirmation: password)
 end
 
-# Saving_item.create!(itemname: "タバコ",
-#                     categoryid: "1",
-#                     date: "2019/1/1",
-#                     amount: "500",
-#                     memo: "今日も1箱我慢した")
+Category.create!(category_name: "趣味")
+Category.create!(category_name: "日用品")
+Category.create!(category_name: "交通費")
+Category.create!(category_name: "嗜好品")
+Category.create!(category_name: "食費")
+Category.create!(category_name: "飲料")
+Category.create!(category_name: "衣服")
+Category.create!(category_name: "生活費")
+Category.create!(category_name: "通信費")
+Category.create!(category_name: "その他")
 
-# users = User.order(:cerated_at).take(6)
-# 10.times do
-#   memo = Faker::Lorem.sentence(5)
-#   users.each { |user| user.saving_items.create!(memo: memo) }
-# end
+users = User.all
+user  = users.first
+following = users[2..30]
+followers = users[3..20]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }

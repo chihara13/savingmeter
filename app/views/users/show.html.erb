@@ -4,6 +4,12 @@
 </h1>
 
 <p><%= @user.username %>さんがログイン中です。</p>
+<section class="stats">
+  <%= render 'layouts/stats' %>
+</section>
+<section>
+  <%= render 'layouts/follow_form' if user_signed_in? %>
+</section>
 
 <table>
   <thead>

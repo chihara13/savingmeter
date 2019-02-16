@@ -15,6 +15,7 @@ class SavingItemsController < ApplicationController
   # GET /saving_items/new
   def new
     @saving_item = SavingItem.new
+    @category = Category.all
   end
 
   # GET /saving_items/1/edit

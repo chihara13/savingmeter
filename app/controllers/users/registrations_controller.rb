@@ -29,6 +29,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def following
+    @title = "フォロー"
+    @user  = current_user
+    @users = @user.following
+    render 'show_follow'
+  end
+ 
+  def followers
+    @title = "フォロワー"
+    @user  = current_user
+    @users = @user.followers
+    render 'show_follow'
+  end
+
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to
