@@ -18,7 +18,7 @@
 
   <div class="field">
   <%= form.label :カテゴリ %>
-  <%= form.collection_select :category_id, @category.group(:category_name).order(id: :asc), :id, :category_name, {prompt: ""} %>
+  <%= form.collection_select :category_id, @category.group(:category_name).order(id: :asc), :id, :category_name, {prompt: ""}, {style:"display: block"} %>
   </div>
   
   <div class="field">
