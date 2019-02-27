@@ -22,9 +22,9 @@
         <td><%= saving_item.date %></td>
         <td><%= saving_item.amount %></td>
         <td><%= saving_item.content %></td>
-        <td><%= link_to 'Show', saving_item %></td>
-        <td><%= link_to 'Edit', edit_saving_item_path(saving_item) %></td>
-        <td><%= link_to 'Destroy', saving_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', saving_item %></td>
+        <td><%= link_to '編集', edit_saving_item_path(saving_item) %></td>
+        <td><%= link_to '削除', saving_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Saving Item', new_saving_item_path %>
+<%= link_to '新規投稿', new_saving_item_path %>

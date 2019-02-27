@@ -1,34 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Item name:</strong>
+  <strong>節約したもの:</strong>
   <%= @saving_item.item_name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @saving_item.category_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @saving_item.user %>
-</p>
-
-<p>
-  <strong>Date:</strong>
+  <strong>日付:</strong>
   <%= @saving_item.date %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong>価格:</strong>
   <%= @saving_item.amount %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>ひとことメモ:</strong>
   <%= @saving_item.content %>
 </p>
 
-<%= link_to 'Edit', edit_saving_item_path(@saving_item) %> |
-<%= link_to 'Back', saving_items_path %>
+<%= link_to '戻る', saving_items_path %>
