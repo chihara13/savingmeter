@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>節約したもの:</strong>
+  <%= @saving_item.item_name %>
+</p>
+
+<p>
+  <strong>日付:</strong>
+  <%= @saving_item.date %>
+</p>
+
+<p>
+  <strong>価格:</strong>
+  <%= @saving_item.amount %>
+</p>
+
+<p>
+  <strong>ひとことメモ:</strong>
+  <%= @saving_item.content %>
+</p>
+
+<%= link_to '戻る', saving_items_path %>

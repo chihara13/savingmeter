@@ -1,0 +1,42 @@
+<%= form_with(model: saving_item, local: true) do |form| %>
+  <% if saving_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(saving_item.errors.count, "error") %> prohibited this saving_item from being saved:</h2>
+
+      <ul>
+      <% saving_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :節約したもの %>
+    <%= form.text_field :item_name %>
+  </div>
+
+  <div class="field">
+  <%= form.label :カテゴリ %>
+  <%= form.collection_select :category_id, @category.group(:category_name).order(id: :asc), :id, :category_name, {prompt: ""}, {style:"display: block"} %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :日付 %>
+    <%= form.text_field :date, class: 'date-picker' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :価格 %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :一言メモ %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

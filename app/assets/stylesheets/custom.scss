@@ -1,0 +1,11 @@
+/* checkbox style overwrite */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: relative !important;
+  opacity: 100 !important;
+  pointer-events: visible !important;
+}
+
+li {
+  list-style: none;
+}

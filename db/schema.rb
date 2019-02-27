@@ -10,11 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_28_172258) do
+ActiveRecord::Schema.define(version: 2019_02_07_174542) do
 
-  create_table "savings", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "saving_items", force: :cascade do |t|
+    t.string "item_name"
+    t.integer "category_id"
+    t.integer "user_id"
+    t.date "date"
+    t.integer "amount"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "category"
+    t.index ["user_id", "created_at"], name: "index_saving_items_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_saving_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -25,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_12_28_172258) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

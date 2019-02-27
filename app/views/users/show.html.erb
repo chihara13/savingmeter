@@ -1,0 +1,55 @@
+<% provide(:title, @user.username) %>
+<h1>
+  こんにちは、<%= @user.username %>さん！
+</h1>
+
+<p><%= @user.username %>さんがログイン中です。</p>
+<section class="stats">
+  <%= render 'layouts/stats' %>
+</section>
+<section>
+  <%= render 'layouts/follow_form' if user_signed_in? %>
+</section>
+
+<div class="col-md-8">
+  <table>
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>カテゴリー</th>
+        <th>日付</th>
+        <th>価格</th>
+        <th>ひとことメモ</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  <% if @saving_items.any? %>
+  <h3>投稿一覧</h3>
+  <ol class="saving_items">
+    <% @saving_items.each do |item| %>
+      <tbody>
+        <tr>
+          <li id="saving_item-<%= item.id %>">
+          <td><span class="user"><%= link_to "#{item[:item_name]}", saving_item_path(item[:id]) %></span></td>
+          <td><span class="category_id"><%= item.category_id %></span></td>
+          <td><span class="amount"><%= item.amount %></span></td>
+          <td><span class="date"><%= item.date %></span></td>
+          <td><span class="content"><%= item.content %></span></td>
+          <td><span class="timestamp">
+            投稿：<%= time_ago_in_words(item.created_at) %> ago.
+          </span></td>
+          </li>
+        </tr>
+      </tbody>
+    </table>
+    <% end %>
+  </ol>
+    <%= paginate @saving_items %>
+  <% end %>
+</div>
+
+</br>
+</br>
+<%= link_to '投稿する', new_saving_item_path %>
+</br>
+<%= link_to 'プロフィール編集', edit_user_registration_path %>

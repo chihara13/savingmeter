@@ -1,0 +1,18 @@
+<header class="navbar navbar-fixed-to navbar-inverse">
+  <nav>
+    <div class="nav-wrapper teal accent-4">
+      <%= link_to image_tag("Saving Meter-logo.png", alt: "Saving Meter logo", width: '30%'), root_path, class: "brand-logo" %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "ホーム", root_path %></li>
+        <li><%= link_to "お問い合わせ", home_contact_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "マイページ", current_user %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "ユーザー登録", new_user_registration_path %></li>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+          <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
